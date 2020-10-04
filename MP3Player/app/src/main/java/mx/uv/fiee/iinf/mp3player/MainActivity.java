@@ -165,7 +165,6 @@ public class MainActivity extends Activity {
         if(mp_progress!=-1 && sb_progress!=-1 && music!=-1){
             
             Uri mediaUri = null;
-            Toast.makeText (getApplicationContext (), "Now playing "+music, Toast.LENGTH_LONG).show ();
             switch (music){
                 case 1:
                     mediaUri= Uri.parse ("android.resource://" + getBaseContext ().getPackageName () + "/" + R.raw.mr_blue_sky);
@@ -187,7 +186,6 @@ public class MainActivity extends Activity {
                 player.seekTo(mp_progress);
                 player.start();
 
-                Toast.makeText (getApplicationContext (), "Now playing: Mr. Blue Sky", Toast.LENGTH_LONG).show ();
             } catch (IOException ex) { ex.printStackTrace (); }
 
         }
