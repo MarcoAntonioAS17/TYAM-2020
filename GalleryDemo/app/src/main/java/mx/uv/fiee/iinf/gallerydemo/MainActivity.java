@@ -98,18 +98,31 @@ public class MainActivity extends Activity {
 
         cursor.close ();
 
+        Cursor cursor2 = getContentResolver ().query (
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI ,
+                columns,
+                null,
+                null,
+                order
+        );
+        DatabaseUtils.dumpCursor (cursor2);
+        if (cursor == null) return;
 
-//        Uri u = (new Uri.Builder ())
-//                .scheme (ContentResolver.SCHEME_ANDROID_RESOURCE)
-//                .authority (getResources().getResourcePackageName (R.drawable.a3_26))
-//                .appendPath (getResources().getResourceTypeName (R.drawable.a3_26))
-//                .appendPath (getResources().getResourceEntryName (R.drawable.a3_26))
-//                .build ();
-//
-//        LinkedList<Uri> imageUris = new LinkedList<> ();
-//        for (int i = 0; i < 100; i++) {
-//            imageUris.add (u);
-//        }
+        cursor2.moveToFirst ();
+        while (cursor2.moveToNext ()) {
+            int index = cursor2.getColumnIndexOrThrow (MediaStore.Images.Media._ID);
+            int id = cursor2.getInt (index);
+
+
+            Uri uri = ContentUris.withAppendedId (
+                    MediaStore.Images.Media.INTERNAL_CONTENT_URI,
+                    id
+            );
+
+            imageUris.add (uri);
+        }
+
+        cursor2.close ();
 
         GalleryAdapter adapter = new GalleryAdapter (getBaseContext (), imageUris);
         rv.setAdapter (adapter);
