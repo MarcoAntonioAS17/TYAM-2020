@@ -8,10 +8,14 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import android.util.Log;
 =======
 import android.provider.MediaStore;
 >>>>>>> 7f0ca7d... Actividad MP3 Player v1.1
+=======
+import android.provider.MediaStore;
+>>>>>>> 7f0ca7d7398b82e56c2a230d02a2e8118c743890
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -25,6 +29,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class DetailsActivity extends Activity {
 <<<<<<< HEAD
+<<<<<<< HEAD
     private static final String SONG_KEY = "song";
     private static final String PROGRESS_KEY = "progress";
     private static final String ISPLAYING_KEY = "isplaying";
@@ -34,10 +39,16 @@ public class DetailsActivity extends Activity {
     public static final String Clave = "mx.uv.fiee.iinf.mp3player.DetailsActivity";
     ImageButton ImgButton;
 >>>>>>> 7f0ca7d... Actividad MP3 Player v1.1
+=======
+
+    public static final String Clave = "mx.uv.fiee.iinf.mp3player.DetailsActivity";
+    ImageButton ImgButton;
+>>>>>>> 7f0ca7d7398b82e56c2a230d02a2e8118c743890
     MediaPlayer player;
     Thread posThread;
     Uri mediaUri;
     int pos;
+<<<<<<< HEAD
 <<<<<<< HEAD
     boolean updateProgressBar;
 =======
@@ -45,6 +56,11 @@ public class DetailsActivity extends Activity {
 
     TextView txtAutor, txtArchivo;
 >>>>>>> 7f0ca7d... Actividad MP3 Player v1.1
+=======
+    SeekBar sbProgress;
+
+    TextView txtAutor, txtArchivo;
+>>>>>>> 7f0ca7d7398b82e56c2a230d02a2e8118c743890
 
     @Override
     protected void onCreate (@Nullable Bundle savedInstanceState) {
@@ -103,6 +119,7 @@ public class DetailsActivity extends Activity {
         });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         // botón play
         ImageButton btnAudio1 = findViewById (R.id.btnAudio1);
         btnAudio1.setOnClickListener (view -> {
@@ -143,6 +160,18 @@ public class DetailsActivity extends Activity {
             }
             ImgButton.setImageDrawable(drw.get());
 >>>>>>> 7f0ca7d... Actividad MP3 Player v1.1
+=======
+        ImgButton.setOnClickListener(v-> {
+
+            if(player.isPlaying()){
+                drw.set(getResources().getDrawable(R.drawable.ic_play_arrow_black_48dp, getTheme()));
+                player.pause();
+            }else{
+                drw.set(getResources().getDrawable(R.drawable.ic_pause_black_48dp, getTheme()));
+                player.start();
+            }
+            ImgButton.setImageDrawable(drw.get());
+>>>>>>> 7f0ca7d7398b82e56c2a230d02a2e8118c743890
         });
 
     }
@@ -158,6 +187,8 @@ public class DetailsActivity extends Activity {
 <<<<<<< HEAD
         posThread.interrupt ();
 =======
+        Toast.makeText(getApplicationContext(),"Hola",Toast.LENGTH_LONG).show();
+
         Toast.makeText(getApplicationContext(),"Hola",Toast.LENGTH_LONG).show();
 
         if (player.isPlaying ()) {
@@ -245,9 +276,12 @@ public class DetailsActivity extends Activity {
         Intent intent = getIntent ();
         if (intent != null) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             String audio = intent.getStringExtra ("AUDIO");
             mediaUri = Uri.parse (audio);
 =======
+=======
+>>>>>>> 7f0ca7d7398b82e56c2a230d02a2e8118c743890
             String audio = intent.getStringExtra (Clave);
             mediaUri = Uri.parse(audio);
 
@@ -265,11 +299,15 @@ public class DetailsActivity extends Activity {
             txtArchivo.setText(returnCursor.getString(nameIndex));
             txtAutor.setText(returnCursor.getString(ArtistIndex));
 
+<<<<<<< HEAD
 >>>>>>> 7f0ca7d... Actividad MP3 Player v1.1
+=======
+>>>>>>> 7f0ca7d7398b82e56c2a230d02a2e8118c743890
         }
 
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     /**
      * Clase que implementa a la interfaz OnSeekBarChangeListener para responder
@@ -286,6 +324,12 @@ public class DetailsActivity extends Activity {
     class MySeekBarChangeListener implements SeekBar.OnSeekBarChangeListener {
 
         @Override
+=======
+    //A la escucha de cambios en el SeekBar
+    class MySeekBarChangeListener implements SeekBar.OnSeekBarChangeListener {
+
+        @Override
+>>>>>>> 7f0ca7d7398b82e56c2a230d02a2e8118c743890
         public void onProgressChanged (SeekBar seekBa, int i, boolean b) {
             if (b) {
                 boolean bandera=false;
@@ -293,7 +337,10 @@ public class DetailsActivity extends Activity {
                     player.pause();
                     bandera=true;
                 }
+<<<<<<< HEAD
 >>>>>>> 7f0ca7d... Actividad MP3 Player v1.1
+=======
+>>>>>>> 7f0ca7d7398b82e56c2a230d02a2e8118c743890
                 player.seekTo (i);
                 if(bandera)
                     player.start ();

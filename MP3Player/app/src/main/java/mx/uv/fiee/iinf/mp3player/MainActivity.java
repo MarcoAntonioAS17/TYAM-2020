@@ -62,10 +62,13 @@ public class MainActivity extends Activity {
 
     void loadAudios () {
 <<<<<<< HEAD
+<<<<<<< HEAD
         // información a recuperar
         String[] columns = {MediaStore.Audio.Media._ID, MediaStore.Audio.Artists.ARTIST, MediaStore.Audio.Media.DISPLAY_NAME};
         String order = MediaStore.Audio.Media.DEFAULT_SORT_ORDER; // orden
 =======
+=======
+>>>>>>> 7f0ca7d7398b82e56c2a230d02a2e8118c743890
         String [] columns = { MediaStore.Audio.Artists._ID, MediaStore.Audio.Media.DISPLAY_NAME};
         String order = MediaStore.Audio.Media.DEFAULT_SORT_ORDER;
 >>>>>>> 7f0ca7d... Actividad MP3 Player v1.1
@@ -82,6 +85,7 @@ public class MainActivity extends Activity {
             AudioModel audioModel = new AudioModel();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             int index = cursor.getColumnIndexOrThrow(MediaStore.Audio.Media._ID);
             long id = cursor.getLong(index);
             audioModel.id = id;
@@ -93,6 +97,15 @@ public class MainActivity extends Activity {
             int index = cursor.getColumnIndexOrThrow (MediaStore.Audio.Media._ID);
             long id = cursor.getLong(index);
             audioModel.id = id;
+=======
+            int index = cursor.getColumnIndexOrThrow (MediaStore.Audio.Media._ID);
+            long id = cursor.getLong(index);
+            audioModel.id = id;
+
+            index = cursor.getColumnIndexOrThrow (MediaStore.Audio.Media.DISPLAY_NAME);
+            String data_name = cursor.getString (index);
+            audioModel.name = data_name;
+>>>>>>> 7f0ca7d7398b82e56c2a230d02a2e8118c743890
 
             index = cursor.getColumnIndexOrThrow (MediaStore.Audio.Media.DISPLAY_NAME);
             String data_name = cursor.getString (index);
@@ -121,7 +134,10 @@ public class MainActivity extends Activity {
             startActivity(intent);
 
         });
+<<<<<<< HEAD
 >>>>>>> 7f0ca7d... Actividad MP3 Player v1.1
+=======
+>>>>>>> 7f0ca7d7398b82e56c2a230d02a2e8118c743890
         lv.setAdapter (adapter);
     }
 

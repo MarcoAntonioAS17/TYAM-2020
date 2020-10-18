@@ -11,10 +11,14 @@
         android:padding="10dp"
         android:layout_weight="5"
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:src="@drawable/unnamed"/>
 =======
         android:src="@mipmap/music_launcher_foreground"/>
 >>>>>>> 7f0ca7d... Actividad MP3 Player v1.1
+=======
+        android:src="@mipmap/music_launcher_foreground"/>
+>>>>>>> 7f0ca7d7398b82e56c2a230d02a2e8118c743890
 
     <TextView android:id="@+id/Autor"
         android:layout_width="match_parent"
@@ -24,6 +28,7 @@
     <TextView android:id="@+id/Archivo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
 <<<<<<< HEAD
         android:layout_weight="1"
         android:padding="10dp"
@@ -49,6 +54,8 @@
 
     </LinearLayout>
 =======
+=======
+>>>>>>> 7f0ca7d7398b82e56c2a230d02a2e8118c743890
         android:textSize="8pt"
         android:paddingLeft="20dp"/>
 
@@ -66,6 +73,9 @@
 
 
 
+<<<<<<< HEAD
 >>>>>>> 7f0ca7d... Actividad MP3 Player v1.1
+=======
+>>>>>>> 7f0ca7d7398b82e56c2a230d02a2e8118c743890
 
 </LinearLayout>
